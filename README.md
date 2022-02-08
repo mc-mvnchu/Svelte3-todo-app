@@ -12,6 +12,6 @@ You need to have Node.js and npm installed on your computer
 
 ## Getting started
 
-Clone this repository to your filesystem.
+[Clone](https://github.com/freshman-tech/svelte-todo-starter-files) this repository to your filesystem.
 
 `cd` into the project directory and follow along with the [tutorial](https://freshman.tech/svelte-todo/).
