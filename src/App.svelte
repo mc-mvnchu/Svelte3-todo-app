@@ -1,5 +1,20 @@
 <script>
-    //component logic
+    let todoItms = [];
+    let nnewToddo = '';
+
+    function addTodo() {
+        newTodo  = newTodo.trim();
+        if (!newTodo) return;
+
+        const todo = {
+            text: newTodo,
+            checked: false;
+            id: Date.now(),
+        };
+
+        todoItems = [...tofoItems, todo];
+        newTodo = '';
+    }
 </script>
 
 <style>
