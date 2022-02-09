@@ -8,7 +8,7 @@ The code in this repo is meant to be a reference point for anyone following alon
 
 ## Prerequisites
 
-You need to have Node.js and npm installed on your computer
+You need to have **Node.js** and **npm** installed on your computer.
 
 ## Getting started
 
