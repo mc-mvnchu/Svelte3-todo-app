@@ -41,10 +41,9 @@ Try it out. Enter a new todo item, and hit **enter**. Behind the scenes, the tod
 
 ### Render the todo items
 
+Once we append a new todo to `todoItems`, we  want the page to be updated and the item rendered on the screen. We can do this easily in Svelte using a special `each` construct in the [HTML:](./src/App.svelte#L27-L38)
 
-
-
-
+For each todo in the `todoItems`, the `li` element is appended he DOM. If you're coming from React or Vue, it's essential to add a `key` to each item when rendering a list. In Svelte, you can do this using the `(key)` synta in `each` construct. This helps Svelte figure out what items are changedd, added or removed in an efficient manner. In this instance, use todo's `id` as the key. 
 
 
 

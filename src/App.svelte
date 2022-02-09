@@ -1,9 +1,9 @@
 <script>
-    let todoItms = [];
-    let nnewToddo = '';
+    let todoItems = [];
+    let newTodo = '';
 
     function addTodo() {
-        newTodo  = newTodo.trim();
+        newTodo = newTodo.trim();
         if (!newTodo) return;
 
         const todo = {
@@ -12,9 +12,10 @@
             id: Date.now(),
         };
 
-        todoItems = [...tofoItems, todo];
+        todoItems = [...todoItems, todo];
         newTodo = '';
     }
+    
 </script>
 
 <style>
@@ -24,7 +25,18 @@
 <main>
     <div class="container">
         <h1 class="app-title">todos</h1>
-        <ul class="todo-list"></ul>
+        <ul class="todo-list">
+            <!-- #each todoItems as todo (todo.id) -->
+            <li class="todo-item">
+                <input id={todo.id} type="checkbox" />
+                <label for={todo.id} class="tick"></label>
+                <span>{todo.text}</span>
+                <button class="delete-todo">
+                    <svg><use href="#delete-icon"></use></svg>
+                </button>
+            </li>
+            <!-- {/each} -->
+        </ul>
         <div class="empty-state">
             <svg class="checklist-icon">
                 <use href="#checklist-icon"></use>
@@ -37,7 +49,7 @@
             class="js-todo-input"
             type="text"
             aria-label="Enter a new todo item"
-            placeholder="E.g. Build  a web app"
+            placeholder="E.g. Build a web app"
             />
         </form>
     </div>
