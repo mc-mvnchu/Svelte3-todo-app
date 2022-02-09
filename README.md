@@ -41,24 +41,34 @@ Try it out. Enter a new todo item, and hit **enter**. Behind the scenes, the tod
 
 ### Render the todo items
 
-Once we append a new todo to `todoItems`, we  want the page to be updated and the item rendered on the screen. We can do this easily in Svelte using a special `each` construct in the [HTML:](./src/App.svelte#L27-L38)
+Once we append a new todo to `todoItems`, we  want the page to be updated and the item rendered on the screen. We can do this easily in Svelte using a special `each` construct in the [HTML](./src/App.svelte#L27-L38):
 
-For each todo in the `todoItems`, the `li` element is appended he DOM. If you're coming from React or Vue, it's essential to add a `key` to each item when rendering a list. In Svelte, you can do this using the `(key)` synta in `each` construct. This helps Svelte figure out what items are changedd, added or removed in an efficient manner. In this instance, use todo's `id` as the key. 
+For each todo in the `todoItems`, the `li` element is appended he DOM. If you're coming from React or Vue, it's essential to add a `key` to each item when rendering a list. In Svelte, you can do this using the `(key)` synta in `each` construct. This helps Svelte figure out what items are changed, added or removed in an efficient manner. In this instance, use todo's `id` as the key. 
+
+### Mark todo items as completed
+
+Next, we need a way to indicate that a todo item has been completed. That's what the `checked` property on the `todo` object is for. When a todo item is done, this property need to be toggled to `true` and vide versa. Add a new [`toggleDone`](./src/App.svelte#L18-L21) function below `addTodo`
+
+Then update the `li` element in the `each` [block as follows:](./src/App.svelte#L42-51)
+
+_Note:_ You need to place your handler in an arrow function when you want to pass argument to the function. If you do `on:click={toggleDone}` instead, the DOM event is what will be passed into the function.
+
+Once the `checked` property on a todo is set to `true`, the `done` class is to toggled on the `li` element. This has the effect of showing a checkmark in the checkbox of the item and striking out the text.
+
+### Delete a todo item
+
+Removing an item from the list is easy enough. Add a new [`deleteTodo` function](./src/App.svelte#L) below `toggleDone`:
+
+Then bind it tot the `button` inside the `li` element.
+
+That's it! Clicking the `x` button will now remove the item from `todoItems` while Svelte take care of the DOM update. 
 
 
+### Keep for focus on the form input
 
+At the moment, onjce a new todo item is submitted the input goes out of focus and has to be refocused manually each time you want to add another todo. This can become quite tedious if you want to add a large amount of items. To keep focus of the input, we can hook into the `afterUpdate` lifecycle hook which turn runs after the DOM updated.
 
+Import `afterUpdate` at the top of the `<script>` tag in the `App.svelte` and use it.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Conclusion
+This project helps in learning Svelte and how you can use it to build user interfaces.
