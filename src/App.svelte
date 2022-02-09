@@ -8,7 +8,7 @@
 
         const todo = {
             text: newTodo,
-            checked: false;
+            checked: false,
             id: Date.now(),
         };
 
@@ -32,7 +32,7 @@
             <h2 class="empty-state__title">Add your first todo</h2>
             <p class="empty-state__description">What do you want to get done today?</p>
         </div>
-        <form>
+        <form on:submit|preventDefault={addTodo}>
             <input
             class="js-todo-input"
             type="text"
