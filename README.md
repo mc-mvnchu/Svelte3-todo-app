@@ -2,6 +2,7 @@
 
 Starter files for the Todo List app built with Svelte 3. [Tutorial](https://freshman.tech/svelte-todo/)
 
+![Screenshot](./img/scre-shot.png)
 [Here's a live demo of the completed application](http://svelte3-todo.surge.sh/).
 
 The code in this repo is meant to be a reference point for anyone following along with the tutorial.
